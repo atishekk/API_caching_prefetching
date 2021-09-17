@@ -1,0 +1,23 @@
+{
+  "name": "codeyoung_translation_api",
+  "version": "1.0.0",
+  "description": "A translation api with caching and pre-fetching",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "author": "Atishek Kumar",
+  "repository": "https://github.com/atishekk/codeyoung_translation_api.git",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
