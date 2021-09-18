@@ -4,4 +4,6 @@ Dockerfile
 .env
 .nvmrc
 .dockerignore
+docker-compose-dev.yaml
+Dockerfile-dev
 README.md

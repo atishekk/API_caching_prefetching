@@ -2,10 +2,10 @@ const { DataTypes } = require("sequelize")
 
 module.exports =  (sequelize) => {
     const Input = sequelize.define("Input", {
-        body: {
+        q: {
             type: DataTypes.TEXT
         },
-        source_lang: {
+        source: {
             type: DataTypes.STRING
         }
     }, {
@@ -16,7 +16,7 @@ module.exports =  (sequelize) => {
         response: {
             type: DataTypes.TEXT
         },
-        dest_lang: {
+        target: {
             type: DataTypes.STRING
         }
     }, {
