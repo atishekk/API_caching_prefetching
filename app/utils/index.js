@@ -3,6 +3,7 @@ const http = require("https");
 const { request_options } = require("../config");
 const { similar } = require("../config");
 
+// Fetch from the google translate api
 exports.fetch = (data) => {
     const options = request_options;
     return new Promise((resolve, reject) => {
@@ -26,6 +27,7 @@ exports.fetch = (data) => {
     })
 }
 
+// Resolve the similar languages that need to be pre-fetched
 exports.get_similar = ({q, source, target}) => {
     let similar_langs = [];
     for(let i = 0; i < similar.length; i++) {

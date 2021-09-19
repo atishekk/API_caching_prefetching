@@ -1,5 +1,6 @@
 const { cache } = require("./index")
 
+// Read from the database, if the required translation exist it is returned else undefined is returned
 exports.get = async (req_data) => {
     const Input = cache.input;
     const Translation = cache.translation;
@@ -28,6 +29,7 @@ exports.get = async (req_data) => {
 
 };
 
+// write translations to the database, crates the Input object if it doesn't exist already
 exports.write = async (req_data, translated) => {
     const Input = cache.input;
     const Translation = cache.translation;

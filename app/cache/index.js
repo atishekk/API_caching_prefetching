@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-
+// Initialise the sequelize instance
 const sequelize = new Sequelize(
     process.env.DB_NAME, 
     process.env.DB_USER, 
@@ -18,6 +18,7 @@ const sequelize = new Sequelize(
     }
 );
 
+// Initialise the cache with the sequelize instance and the database models
 const cache = {};
 cache.Sequelize = Sequelize;
 cache.sequelize = sequelize;
@@ -26,6 +27,7 @@ const {Input, Translation} = require("./cache.model.js")(sequelize);
 cache.input = Input;
 cache.translation = Translation;
 
+// Create the database connection
 const connect_cache = async (options) => {
     function sleep(time) {
         return new Promise((resolve) => {

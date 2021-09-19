@@ -1,6 +1,7 @@
 const { get, write } = require("../cache/operations");
 const { fetch, get_similar } = require("../utils");
 const { Payload } = require("../validation");
+// POST "/" controller
 /*
  * data: String to be translated
  * source: Source language
@@ -12,11 +13,10 @@ const { Payload } = require("../validation");
     -> Get the translation for similar languages as in
         config.similar object and add to the cache
         */
-
 exports.Translation = async (req, res) => {
-    //validate the data - joi
     let resp;
     try {
+        //validate the data - joi
         const cleaned_req = await Payload.validateAsync(req.body)
         resp = await get(cleaned_req);
         if(resp === undefined) {
