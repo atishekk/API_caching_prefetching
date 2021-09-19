@@ -23,7 +23,9 @@ module.exports =  (sequelize) => {
         tableName: "Translation"
     });
     
-    Input.hasMany(Translation);
+    Input.hasMany(Translation, {
+        foreignKey: "InputId"
+    });
     Translation.belongsTo(Input);
 
     return { Input, Translation };

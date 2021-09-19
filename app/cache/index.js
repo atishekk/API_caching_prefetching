@@ -13,7 +13,8 @@ const sequelize = new Sequelize(
             min: 0,
             acquire: 30000,
             idle: 10000
-        }
+        },
+        logging: false
     }
 );
 
@@ -35,7 +36,6 @@ const connect_cache = async (options) => {
     while(true) {
         try {
             await sequelize.sync(options);
-            console.log("Connected with the cache");
             break;
         } catch(err) {
             await sleep(1000);

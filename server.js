@@ -5,6 +5,7 @@ const port = process.env.NODE_DOCKER_PORT || 8080;
 
 (async () => {
     await connect_cache();
+    console.log("Connected with the cache");
     app.listen(port, () => {
         console.log(`Started the server at http://localhost:${port}`);
     })

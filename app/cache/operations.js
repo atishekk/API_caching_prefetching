@@ -24,7 +24,6 @@ exports.get = async (req_data) => {
         console.log(err);
         return undefined;
     }
-    console.log(JSON.stringify(resp));
     return resp !== null ? resp.Translations[0].response : undefined;
 
 };
@@ -34,7 +33,6 @@ exports.write = async (req_data, translated) => {
     const Translation = cache.translation;
     //check if the input already exists
     let object = await Input.findOne({
-        attributes: ['q', 'source'],
         where: {
             q: req_data.q,
             source: req_data.source
@@ -42,9 +40,9 @@ exports.write = async (req_data, translated) => {
     });
     if(object === null) {
         object = await Input.create({q: req_data.q, source: req_data.source});
-    }
+    } 
     const new_translation = await Translation.create({response: translated, target: req_data.target});
-    await object.addTranslation(new_translation);
+    await new_translation.setInput(object);
 }
 
 ////testing 
