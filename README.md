@@ -10,6 +10,7 @@
 - The request body is validated using **Joi** and appropriate errors are returned with 400 status code.
 - [app/config/prefetch.config.js](https://github.com/atishekk/codeyoung_translation_api/blob/main/app/config/prefetch.config.js) contains the configuration for prefetching other translations based on the target language of the request.
 - All the code has been arranged into modules making it easy to extend the application in the future.
+- The application is tested using **jest** and **supertest**.
 
 #### Limitations
 - Free Version of the Google translate API doesn't support batch translations and has a hard limit of 500 characters/month. Hence only
