@@ -14,11 +14,11 @@
 
 #### Limitations
 - Free Version of the Google translate API doesn't support batch translations and has a hard limit of 500 characters/month. Hence only
-a small number of additional languages the cached
+a small number of additional languages are prefetched.
 
 #### Better Approach
 - Using In-memory cache like Redis can provide a better performance than a SQL Databases
-- MongoDB can provide a more intutive and flexible implemnetation because to its similarity with JSON
+- MongoDB can provide a more intutive and flexible implementation because to its similarity with JSON
 
 ## Requirements
 1. docker - [Installation Guide](https://docs.docker.com/engine/install/)
