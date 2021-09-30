@@ -1,4 +1,4 @@
-# Codeyoung Translation API
+# API Caching and Prefetching
 ## Design Decisions
 - The API uses json due to the convinience provided the Node.js libraries like Sequelize (SQL ORM) and Express' json middleware.
 - The API has a single endpoint "/". 
